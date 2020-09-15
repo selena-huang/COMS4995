@@ -1,3 +1,7 @@
 # COMS4995
 
-Hello, here will be initial project proposal
+Initial project proposal ideas:
+
+- web game
+- a website to host novels
+- a website for other things
