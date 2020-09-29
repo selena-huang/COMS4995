@@ -1,7 +1,10 @@
 # COMS4995
 
-Initial project proposal ideas:
+Inital ideas:
+- a choose-your-own-adventure type novel game
+  - written in C++, working in Unity
+- Website to host personal writing, blog-type pages
+  - Javascript and html
 
-- web game
-- a website to host novels
-- a website for other things
+Chosen project:
+- A website recommending skincare routine based on selection and mood/state on that day.
