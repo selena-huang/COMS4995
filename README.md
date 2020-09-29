@@ -1,7 +1,7 @@
 # COMS4995
 
 License:
-https://img.shields.io/github/license/selena-huang/COMS4995
+![GitHub](https://img.shields.io/github/license/selena-huang/COMS4995)
 
 
 Inital ideas:
