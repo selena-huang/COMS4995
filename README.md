@@ -1,5 +1,9 @@
 # COMS4995
 
+License:
+https://img.shields.io/github/license/selena-huang/COMS4995
+
+
 Inital ideas:
 - a choose-your-own-adventure type novel game
   - written in C++, working in Unity
