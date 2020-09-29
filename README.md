@@ -1,6 +1,5 @@
 # COMS4995
 
-License:
 ![GitHub](https://img.shields.io/github/license/selena-huang/COMS4995)
 
 
