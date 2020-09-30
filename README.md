@@ -1,4 +1,4 @@
-# COMS4995
+# Routine Recommendation
 
 ![GitHub](https://img.shields.io/github/license/selena-huang/COMS4995)
 
