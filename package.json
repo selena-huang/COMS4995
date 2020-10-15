@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/selena-huang/routine-recommendation#readme",
   "dependencies": {
+    "build": "^0.1.4",
+    "lint": "^0.7.0",
+    "test": "^0.6.0",
     "yarn": "^1.22.10"
   }
 }
