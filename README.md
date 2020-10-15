@@ -11,3 +11,4 @@ Inital ideas:
 
 Chosen project:
 - A website recommending skincare routine based on selection and mood/state on that day.
+- edit 10/13: it seems that this will be harder than I thought so it will attempt to do the above but starting with just creating a list and being able to edit the list. This may end up similar to a random buzzfeed quiz and spitting out answers.
