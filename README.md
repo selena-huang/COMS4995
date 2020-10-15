@@ -1,7 +1,7 @@
 # Routine Recommendation
 
 ![GitHub](https://img.shields.io/github/license/selena-huang/COMS4995)
-https://travis-ci.org/selena-huang/routine-recommendation.svg?branch=master
+[![Build Status](https://travis-ci.org/selena-huang/routine-recommendation.svg?branch=master)](https://travis-ci.org/selena-huang/routine-recommendation)
 
 Inital ideas:
 - a choose-your-own-adventure type novel game
