@@ -1,0 +1,27 @@
+/* currently everything is temp data so i can have a file */
+body, html {
+	height: 100%;
+	font-family: 'Khula', sans-serif;
+}
+
+p {
+	font-size: 18px;
+	line-height: 1.6em;	
+
+}
+
+h1 {
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	font-size: 54px;
+	letter-spacing: 10px;
+}
+
+footer {
+	width: 100%;
+	color: white;
+	background: black;
+	text-align: center;
+	padding: 40px;
+}
+
