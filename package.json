@@ -1,0 +1,27 @@
+{
+  "name": "osd",
+  "version": "1.0.0",
+  "description": "package.json file for routine-recommendation page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selena-huang/routine-recommendation.git"
+  },
+  "keywords": [
+    "\"yarn\"",
+    "\"npm\"",
+    "\"javascript\""
+  ],
+  "author": "Selena Huang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/selena-huang/routine-recommendation/issues"
+  },
+  "homepage": "https://github.com/selena-huang/routine-recommendation#readme",
+  "dependencies": {
+    "yarn": "^1.22.10"
+  }
+}
