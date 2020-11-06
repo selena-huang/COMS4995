@@ -2,6 +2,10 @@
 
 let productList = [];
 
+/** 
+ * Renders the Product on the screen. Does not persist to any database.
+ * @param {product} product - Product object to render
+ */
 function renderProduct(product) {
   const list = document.querySelector('.js-product-list');
   const item = document.querySelector(`[data-key='${product.id}']`);
@@ -27,6 +31,10 @@ function renderProduct(product) {
   }
 }
 
+/** 
+ * Creates and adds Product to list. Does not persist.
+ * @param {string} text - new input
+ */
 function addProduct(text) {
   const product = {
     text,
@@ -38,6 +46,10 @@ function addProduct(text) {
   renderProduct(product);
 }
 
+/** 
+ * Removes Product to list. Does not persist.
+ * @param {string} key - Key of the item to remove
+ */
 function deleteProduct(key) {
   const index = productList.findIndex(item => item.id === Number(key));
   const product = {
@@ -48,6 +60,7 @@ function deleteProduct(key) {
   renderProduct(product);
 }
 
+/** takes in input when enter is pressed */
 const form = document.querySelector('.js-form');
 form.addEventListener('submit', event => {
   event.preventDefault();
@@ -61,6 +74,7 @@ form.addEventListener('submit', event => {
   }
 });
 
+/** gets the delete button working */
 const list = document.querySelector('.js-product-list');
 list.addEventListener('click', event => {
   if (event.target.classList.contains('js-delete-product')) {
