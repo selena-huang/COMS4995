@@ -8,7 +8,5 @@ module.exports = {
         "ecmaVersion": 12,
         "sourceType": "module"
     },
-	"ignorePatterns": ".eslintrc.js",
-	"rules": {
-    }
+	"ignorePatterns": [".eslintrc.js", "**/test.js"]
 };
