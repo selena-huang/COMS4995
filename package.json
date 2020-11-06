@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/selena-huang/routine-recommendation#readme",
   "dependencies": {
+    "jsdom": "^16.4.0",
+    "sinon": "^9.2.1",
     "test": "^0.6.0",
     "yarn": "^1.22.10"
   },
