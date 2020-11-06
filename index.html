@@ -16,16 +16,24 @@
 
     	<title>Routine Recommendation</title>
     </head>
-    <!-- originally from a product-list: https://freshman.tech/product-list/ -->
+
     <body>
-		<div class="container">
-            <h1 class="app-title">Product List</h1>
+        <div class="main-menu">
+              <ul>
+                <li class="menu-item"><a href="">Your Products<a></li>
+                <li class="menu-item"><a href="recommendation.html">Recommendations</a></li>
+                <li class="menu-item"><a href="profile.html">Profile</a></li>
+              </ul>
+        </div>
+		<div class="container">    <!-- originally from a product-list: https://freshman.tech/product-list/ -->
+
+            <h1 class="app-title">Your Product List</h1>
             <ul class="product-list js-product-list"></ul>
 
             <form class="product-form js-form">
               <i class="fas fa-plus-circle js-form"></i>  <input autofocus type="text" aria-label="New product" placeholder="Add another product:" class="js-product-input">
             </form>
-          </div>
+        </div>
     </body>
 
     <script src="js/scripts.js"></script>

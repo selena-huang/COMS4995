@@ -17,14 +17,15 @@ body {
 }
 
 .container {
-  width: 40% !important;
-  max-width: 300px;
+  position: relative;
+  width: 70%;
+  max-width: 600px !important;
   margin: 0 auto;
   padding-left: 10px;
   padding-right: 10px;
   color: #333;
-  height: 90vh;
-  margin-top: 5vh;
+  height: 95vh;
+  margin-top: 10px;
   margin-bottom: 5vh;
   overflow-y: auto;
 }
@@ -98,4 +99,35 @@ input[type="text"] {
   border:none;
   border-bottom: 1px black solid;
   outline: none;
+}
+
+/* TODO: figure out how to collapse menu bar if width isn't big enough*/
+.main-menu {
+  margin: auto;
+  top: 0;
+  height: 65px;
+  width: 720px;
+  text-align: center;
+}
+
+.menu-item{
+  position: relative;
+  float: left;
+  padding: 10px 35px;
+  display: inline-block;
+  width: max-content;
+}
+.menu-item a{
+  font-family: 'Perpetua', sans-serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  color: black;
+
+}
+
+.menu-item > a:focus, .menu-item > a:hover{
+  background: transparent;
+  color: black;
+  text-decoration: none;
+  border-bottom: 3px solid blue;
 }
