@@ -1,41 +1,84 @@
-// var get_name = document.getElementById("name");
-let methods = {};
-var name;
-var counter = 0;
-var dict = {};
+// originally from a todo list: https://freshman.tech/todo-list/
 
-// document.getElementById('name').addEventListener('keyup', function(event) {
-//   	if (event.keyCode === 13) {
-//   	   console.log("pressed enter!");
-// 	   event.preventDefault();
-// 	   document.getElementById("testing").innerHTML = "success!";
-// 	   hello();
-// 	}
-// });
+let todoItems = [];
 
-methods.hello = function(value) {
-  name = value;
-  return name;
+function renderTodo(todo) {
+  const list = document.querySelector('.js-todo-list');
+  const item = document.querySelector(`[data-key='${todo.id}']`);
+  
+  if (todo.deleted) {
+    item.remove();
+    return
+  }
+
+  const isChecked = todo.checked ? 'done': '';
+  const node = document.createElement("li");
+  node.setAttribute('class', `todo-item ${isChecked}`);
+  node.setAttribute('data-key', todo.id);
+  node.innerHTML = `
+    <input id="${todo.id}" type="checkbox"/>
+    <label for="${todo.id}" class="tick js-tick"></label>
+    <span>${todo.text}</span>
+    <button class="fas fa-minus-circle delete-todo js-delete-todo">
+    </button>
+  `;
+
+  if (item) {
+    list.replaceChild(node, item);
+  } else {
+    list.append(node);
+  }
 }
 
-methods.add = function(obj){
-	dict[counter] = obj;
-	counter += 1;
-	return counter - 1;
+function addTodo(text) {
+  const todo = {
+    text,
+    checked: false,
+    id: Date.now(),
+  };
+
+  todoItems.push(todo);
+  renderTodo(todo);
 }
 
-methods.remove = function(index){
-	var value = dict[index];
-	delete dict[index];
-	return value;
+function toggleDone(key) {
+  const index = todoItems.findIndex(item => item.id === Number(key));
+  todoItems[index].checked = !todoItems[index].checked;
+  renderTodo(todoItems[index]);
 }
 
-methods.contains = function(index){
-	if (index in dict)
-		return dict[index];
-	return null;
+function deleteTodo(key) {
+  const index = todoItems.findIndex(item => item.id === Number(key));
+  const todo = {
+    deleted: true,
+    ...todoItems[index]
+  };
+  todoItems = todoItems.filter(item => item.id !== Number(key));
+  renderTodo(todo);
 }
 
+const form = document.querySelector('.js-form');
+form.addEventListener('submit', event => {
+  event.preventDefault();
+  const input = document.querySelector('.js-todo-input');
 
+  const text = input.value.trim();
+  if (text !== '') {
+    addTodo(text);
+    input.value = '';
+    input.focus();
+  }
+});
 
-module.exports = methods;
+const list = document.querySelector('.js-todo-list');
+list.addEventListener('click', event => {
+  if (event.target.classList.contains('js-tick')) {
+    const itemKey = event.target.parentElement.dataset.key;
+    toggleDone(itemKey);
+  }
+  
+  if (event.target.classList.contains('js-delete-todo')) {
+    const itemKey = event.target.parentElement.dataset.key;
+    deleteTodo(itemKey);
+  }
+});
