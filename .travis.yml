@@ -7,6 +7,6 @@ install:
     - npm install -g codecov
 
 script:
-    - yarn lint
+    - yarn run eslint './**/*.js'
     - yarn test
     - codecov

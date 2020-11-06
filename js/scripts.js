@@ -63,11 +63,6 @@ form.addEventListener('submit', event => {
 
 const list = document.querySelector('.js-product-list');
 list.addEventListener('click', event => {
-  if (event.target.classList.contains('js-tick')) {
-    const itemKey = event.target.parentElement.dataset.key;
-    toggleDone(itemKey);
-  }
-  
   if (event.target.classList.contains('js-delete-product')) {
     const itemKey = event.target.parentElement.dataset.key;
     deleteProduct(itemKey);
