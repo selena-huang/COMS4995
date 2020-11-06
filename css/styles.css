@@ -1,4 +1,4 @@
-/* originally from a todo list: https://freshman.tech/todo-list/*/
+/* originally from a product list: https://freshman.tech/product-list/*/
 
 html {
   box-sizing: border-box;
@@ -12,13 +12,12 @@ html {
 
 body {
  font-family:
- -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans,
-  Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+ -apple-system, BlinkMacSystemFont, 'Perpetua', serif;
  line-height: 1.4;
 }
 
 .container {
-  width: 70% !important;
+  width: 40% !important;
   max-width: 300px;
   margin: 0 auto;
   padding-left: 10px;
@@ -33,21 +32,27 @@ body {
 .app-title {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 80px;
-  opacity: 0.5;
+  font-size: 60px;
 }
 
 button {
-  width: 64px;
-  height: 64px;
+  width: 25px;
+  height: 25px;
+  color: red;
+  font-size: 20px;
+  align-self: right;
 }
 
-.todo-list {
+i {
+  font-size: 6px;
+}
+
+.product-list {
   list-style: none;
   margin-bottom: 20px;
 }
 
-.todo-item {
+.product-item {
   margin-bottom: 10px;
   width: 100%;
   display: flex;
@@ -55,7 +60,7 @@ button {
   justify-content: space-between;
 }
 
-.todo-item span {
+.product-item span {
   flex-grow: 1;
   margin-left: 10px;
   margin-right: 10px;
@@ -66,43 +71,13 @@ button {
   text-decoration: line-through;
 }
 
-input[type="checkbox"] {
-  display: none;
-}
-
-.tick {
-  width: 30px;
-  height: 30px;
-  border: 3px solid #333;
-  border-radius: 50%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.tick::before {
-  content: '✓';
-  font-size: 20px;
-  display: none;
-}
-
-.done .tick::before {
-  display: inline;
-}
-
-.delete-todo {
+.delete-product {
   border: none;
   background-color: transparent;
   outline: none;
   cursor: pointer;
 }
 
-.delete-todo svg {
-  width: 30px;
-  height: 30px;
-  pointer-events: none;
-}
 
 form {
   width: 100%;
@@ -110,35 +85,17 @@ form {
   justify-content: space-between;
 }
 
+.js-form i{
+  padding-top: 20px;
+  font-size: 16px;
+  width: 25px;
+  color: green;
+}
+
 input[type="text"] {
   width: 100%;
   padding: 10px;
-  border-radius: 4px;
-  border: 3px solid #333;
-}
-
-/* Add this below all the other styles */
-
-.empty-state {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  display: none;
-}
-
-.checklist-icon {
-  margin-bottom: 20px;
-}
-
-.empty-state__title, .empty-state__description {
-  margin-bottom: 20px;
-}
-
-/* Add this below the other styles */
-.todo-list:empty {
-  display: none;
-}
-
-.todo-list:empty + .empty-state {
-  display: flex;
+  border:none;
+  border-bottom: 1px black solid;
+  outline: none;
 }

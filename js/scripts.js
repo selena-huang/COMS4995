@@ -1,25 +1,22 @@
-// originally from a todo list: https://freshman.tech/todo-list/
+// originally from a product list: https://freshman.tech/product-list/
 
-let todoItems = [];
+let productList = [];
 
-function renderTodo(todo) {
-  const list = document.querySelector('.js-todo-list');
-  const item = document.querySelector(`[data-key='${todo.id}']`);
+function renderProduct(product) {
+  const list = document.querySelector('.js-product-list');
+  const item = document.querySelector(`[data-key='${product.id}']`);
   
-  if (todo.deleted) {
+  if (product.deleted) {
     item.remove();
     return
   }
 
-  const isChecked = todo.checked ? 'done': '';
   const node = document.createElement("li");
-  node.setAttribute('class', `todo-item ${isChecked}`);
-  node.setAttribute('data-key', todo.id);
+  node.setAttribute('class', `product-item`);
+  node.setAttribute('data-key', product.id);
   node.innerHTML = `
-    <input id="${todo.id}" type="checkbox"/>
-    <label for="${todo.id}" class="tick js-tick"></label>
-    <span>${todo.text}</span>
-    <button class="fas fa-minus-circle delete-todo js-delete-todo">
+  	-<span>${product.text}</span>
+    <button class="fas fa-minus-circle delete-product js-delete-product">
     </button>
   `;
 
@@ -30,55 +27,49 @@ function renderTodo(todo) {
   }
 }
 
-function addTodo(text) {
-  const todo = {
+function addProduct(text) {
+  const product = {
     text,
-    checked: false,
     id: Date.now(),
   };
 
-  todoItems.push(todo);
-  renderTodo(todo);
+  productList.push(product);
+  //productList.sort( (a,b) => (a.text > b.text) ? 1 : ((b.text > a.text) ? -1 : 0));
+  renderProduct(product);
 }
 
-function toggleDone(key) {
-  const index = todoItems.findIndex(item => item.id === Number(key));
-  todoItems[index].checked = !todoItems[index].checked;
-  renderTodo(todoItems[index]);
-}
-
-function deleteTodo(key) {
-  const index = todoItems.findIndex(item => item.id === Number(key));
-  const todo = {
+function deleteProduct(key) {
+  const index = productList.findIndex(item => item.id === Number(key));
+  const product = {
     deleted: true,
-    ...todoItems[index]
+    ...productList[index]
   };
-  todoItems = todoItems.filter(item => item.id !== Number(key));
-  renderTodo(todo);
+  productList = productList.filter(item => item.id !== Number(key));
+  renderProduct(product);
 }
 
 const form = document.querySelector('.js-form');
 form.addEventListener('submit', event => {
   event.preventDefault();
-  const input = document.querySelector('.js-todo-input');
+  const input = document.querySelector('.js-product-input');
 
   const text = input.value.trim();
   if (text !== '') {
-    addTodo(text);
+    addProduct(text);
     input.value = '';
     input.focus();
   }
 });
 
-const list = document.querySelector('.js-todo-list');
+const list = document.querySelector('.js-product-list');
 list.addEventListener('click', event => {
   if (event.target.classList.contains('js-tick')) {
     const itemKey = event.target.parentElement.dataset.key;
     toggleDone(itemKey);
   }
   
-  if (event.target.classList.contains('js-delete-todo')) {
+  if (event.target.classList.contains('js-delete-product')) {
     const itemKey = event.target.parentElement.dataset.key;
-    deleteTodo(itemKey);
+    deleteProduct(itemKey);
   }
 });
