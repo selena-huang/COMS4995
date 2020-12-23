@@ -6,3 +6,8 @@
 [![Documentation Status](https://readthedocs.org/projects/routine-recommendation/badge/?version=latest)](https://routine-recommendation.readthedocs.io/en/latest/?badge=latest)
 
 This project is to create a working front end for a skincare routine recommendation app. The main goal of this project is to create a place where people can create a basic profile, list out the products that they use, and receive recommendations based on these products.
+
+
+Here is a screenshot of the product list page:
+
+![alt text](https://github.com/selena-huang/routine-recommendation/product_list.png)
