@@ -10,4 +10,4 @@ This project is to create a working front end for a skincare routine recommendat
 
 Here is a screenshot of the product list page:
 
-![alt text](https://github.com/selena-huang/routine-recommendation/product_list.png)
+![product_list](./product_list.png)
